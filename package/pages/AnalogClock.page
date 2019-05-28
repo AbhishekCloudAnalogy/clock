@@ -1,0 +1,47 @@
+
+<apex:page sidebar="false" standardStylesheets="false" showHeader="false" controller="AnalogClock" >
+<head>
+  <meta charset="utf-8" />
+  <title>AnalogClock</title>
+  <base href="/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: "Montserrat";
+    }
+  </style>
+  <script>
+    // For the images in the resources:
+    gSfStaticRoot = "{!URLFOR($Resource.AnalogClock, 'favicon.ico')}";
+    if (!(gSfStaticRoot[0] === "{")) {
+      //in local mode this will not have been replaced
+      gSfStaticRoot =
+        gSfStaticRoot.substr(0, gSfStaticRoot.lastIndexOf("/")) + "/";
+    } else {
+      gSfStaticRoot = "";
+    }
+    function getSfStaticResourceRoot() {
+      return gSfStaticRoot;
+    }
+    // For Routing:
+    gSfPageRoot = "apex/AnalogClock";
+    function getSfPageRoot() {
+      return gSfPageRoot;
+    }
+
+    </script>
+    </head>
+    <body>
+    <app-root></app-root>
+    <script type="text/javascript" src="{!URLFOR($Resource.AnalogClock, 'runtime.js')}"></script><script type="text/javascript" src="{!URLFOR($Resource.AnalogClock, 'es2015-polyfills.js')}"></script><script type="text/javascript" src="{!URLFOR($Resource.AnalogClock, 'polyfills.js')}"></script><script type="text/javascript" src="{!URLFOR($Resource.AnalogClock, 'styles.js')}"></script><script type="text/javascript" src="{!URLFOR($Resource.AnalogClock, 'vendor.js')}"></script><script type="text/javascript" src="{!URLFOR($Resource.AnalogClock, 'main.js')}"></script><script type="text/javascript">
+    window._VfResources = '{!URLFOR($Resource.AnalogClock)}';
+    </script></body>
+    </apex:page>
